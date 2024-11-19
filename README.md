@@ -26,20 +26,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Questions - Answers
 
 
-Question 1. We use JWTs a lot throughout our API. For instance, when a user logs in on our API, a JWT is issued and our web-application uses this token for every
+**Question 1**. We use JWTs a lot throughout our API. For instance, when a user logs in on our API, a JWT is issued and our web-application uses this token for every
 request for authentication. Here's an example of such a token:
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzb21lb25lQGV4YW1wbGUubmV0IiwiYWRtaW4iOmZhbHNlLCJ2YWxpZF91bnRpbCI6IldlZCBEZWM
 gMzEgMjM6NTk6NTkgQ0VTVCAxOTY5In0.4bl2puoaRetNjO1GsweKOnnQsYgwNa9bQIC-WQZkuNo
 Why is it (or isn't it) safe to use this? (hint: the token is one string, the pdf might breaks it into multiple lines)
-Answer -
+**Answer** -
 A JWT (JSON Web Token) securely shares information in three parts: header, payload, and signature. However, the payload is only encoded, not encrypted, so anyone with the token can decode its contents. To stay safe, avoid storing sensitive data in the payload, always use HTTPS, set short expiry times, and protect your signing keys. When used carefully, JWTs are secure for sharing non-sensitive data. Use signing algorithm `RS256` instead of 'HS256` which is more secure because it use public/private key pairs . The private key is kept secret and signs the token, while the public key is used to verify the token. This is more secure because even if someone intercepts the public key, they cannot access tokens without the private key.
 
 
 
-Question 2. In our web-application, messages sent from one user to another, can contain HTML, which poses some security risks. Describe two attack vectors
+**Question 2**. In our web-application, messages sent from one user to another, can contain HTML, which poses some security risks. Describe two attack vectors
 bad actors might try to abuse? And how would you mitigate these vectors?
 
-Answer- 
+**Answer**- 
 Allowing HTML in user messages can lead to Cross-Site Scripting (XSS)  and HTML Injection vector attacks, where attackers inject malicious scripts or harmful content. 
 1. Cross-Site Scripting (XSS) :
 In an XSS attack, an attacker injects malicious JavaScript code into a message that another user will view. This JavaScript can then execute in the context of the victim's browser, allowing the attacker to steal session cookies, perform actions on behalf of the user, redirect them to malicious sites, or display misleading content. Since HTML is allowed in the messages, an attacker could embed `<script>` tags or other malicious elements.
@@ -57,9 +57,9 @@ Restrict Allowed HTML Tags: Rather than completely allowing any HTML, limit the 
 
 
 
-Question 3 - Explain the difference between mutable and immutable objects.
+**Question 3** - Explain the difference between mutable and immutable objects.
 
-Answer - A mutable object is an object whose state or content can be modified after it is created, in case of Immutable objects we can not change it .
+**Answer** - A mutable object is an object whose state or content can be modified after it is created, in case of Immutable objects we can not change it .
 
 ● What is an example of an immutable object in JavaScript?
 In JavaScript, strings and numbers are immutable types. Once you create a string or number, its value cannot be changed directly.
@@ -78,10 +78,10 @@ Using `const'
 
 
 
-Question 4. If you would have to speed up the loading of a web-application, how would you do that? (no need to actually do it, just describe the steps you would
+**Question 4**. If you would have to speed up the loading of a web-application, how would you do that? (no need to actually do it, just describe the steps you would
 take)
 
-Answer - We should focus on optimising both the frontend (client-side) and backend (server-side) performance. here with some points to optimize front end :
+**Answer** - We should focus on optimising both the frontend (client-side) and backend (server-side) performance. here with some points to optimize front end :
 
 1. Reduce the number of requests: Each resource (CSS, JavaScript, images, fonts) requires a separate HTTP request. Minimize the number of requests by combining CSS and JavaScript files, reducing the number of images, and using CSS sprites for icons.
 2. Use tools like Terser(for JavaScript), CSSNano (for CSS), and HTMLMinifier to remove unnecessary whitespace, comments, and other non-essential characters.
