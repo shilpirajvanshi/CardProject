@@ -1,0 +1,28 @@
+:host {
+  height: 100px;
+  //height: auto;
+  background-color: #f3f4f6;
+  border: 1px solid #ddd;
+  text-align: center;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  color: tomato;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+.card-block {
+  overflow: hidden;
+  height: 54px;
+  width: 100%;
+  font-weight: 700;
+}
